@@ -1,6 +1,8 @@
+import numpy as np
+
+
 def task1():
     # 1) Сумма ряда 0-100
-    import numpy as np
     array1 = np.array(range(101))
     # sum_array = array1.sum()
     print(array1.sum())
@@ -8,15 +10,14 @@ def task1():
 
 def task2():
     # 2) Сумма ряда 0-input
-    import numpy as np
     x = int(input('Введите значение: '))
     array2 = np.array(range(0, x + 1))
+    # array2 = np.arange(0, x + 1)
     print(array2.sum())
 
 
 def task3():
     # 3) Среднее среди 100 случайных чисел
-    import numpy as np
     np.random.seed(1000)
     a = np.random.random(100)
     # print(a)
