@@ -1,3 +1,4 @@
+# См. актуальную версию Labo3.1
 def person_db_dict():
     # dictionary словарь
     person_dict = {
