@@ -29,7 +29,6 @@ to_search_list = [
     to_search2,
     to_search3,
 ]
-# print(to_search_list)
 
 # name = Person("name","age","height","address")
 andrey = Person("Андрей", 36, 180, "Пушкина, 12, 115")
