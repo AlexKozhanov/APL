@@ -29,8 +29,8 @@ to_search_list = [
     to_search2,
     to_search3,
 ]
-
 # print(to_search_list)
+
 # name = Person("name","age","height","address")
 andrey = Person("Андрей", 36, 180, "Пушкина, 12, 115")
 alex = Person("Александр", 40, 170, "Ленского, 10, 5")
@@ -56,11 +56,7 @@ print('Введите значения для поиска:')
 print('Рост, условный оператор (Возможные значения: больше, меньше, равно)\n'
       '(Пример: больше 120)')
 a, b = input().split()
-# print(f"a: {a}, b: {b}")
 b = int(b)
-# print('Адрес, в виде (Улица, №дома, №кв) Без кавычек\n'
-#       'Пример: Пушкина, 12, 115')
-# z_address = input('Адрес: ')
 # z_person = Person(z_name, z_age, b, address=None)
 z_person = Person(name=None, age=None, height = b, address=None)
 print(z_person)
