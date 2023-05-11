@@ -20,15 +20,22 @@ class Person:
            and (obj.height == None or self.height == None or abs(obj.height - self.height) <= 10) \
            and (obj.address == None or self.address == None or compare(obj.address, self.address))
 
-to_search = Person("Helenaa", 40, 157, "Мильчакова, 17, 100")
-to_search_list = [to_search]
+to_search1 = Person("Елена", 42, 167, "Мильчакова, 17, 100")
+to_search2 = Person(age=40)
+to_search3 = Person(name="Еленаа")
 
-print(to_search_list)
+to_search_list = [
+    to_search1,
+    to_search2,
+    to_search3,
+]
+
+# print(to_search_list)
 # name = Person("name","age","height","address")
-andrey = Person("Andrey", 36, 180, "Пушкина, 12, 115")
-alex = Person("Alexsander", 40, 170, "Ленского, 10, 5")
-olga = Person("Olga", 30, 165, "Ленина, 1, 1")
-helena = Person("Helena", 42, 167, "Мильчакова, 17, 95")
+andrey = Person("Андрей", 36, 180, "Пушкина, 12, 115")
+alex = Person("Александр", 40, 170, "Ленского, 10, 5")
+olga = Person("Ольга", 30, 165, "Ленина, 1, 1")
+helena = Person("Елена", 42, 167, "Мильчакова, 17, 95")
 
 people = [
     andrey,
@@ -36,10 +43,49 @@ people = [
     olga,
     helena,
 ]
-pprint(people)
-from itertools import product
-for p1, p2 in product(people, to_search_list):
-    print(p1, p2, p1 == p2)
+# pprint(people)
+# from itertools import product
+# for p1, p2 in product(people, to_search_list):
+#     print(p1, p2, p1 == p2)
+
+print('Введите значения для поиска:')
+# z_name = input('Имя: ')
+# z_age = int(input('Возраст: '))
+# z_age = int(z_age)
+# z_height = int(input('Рост: ')) # больше 120
+print('Рост, условный оператор (Возможные значения: больше, меньше, равно)\n'
+      '(Пример: больше 120)')
+a, b = input().split()
+# print(f"a: {a}, b: {b}")
+b = int(b)
+# print('Адрес, в виде (Улица, №дома, №кв) Без кавычек\n'
+#       'Пример: Пушкина, 12, 115')
+# z_address = input('Адрес: ')
+# z_person = Person(z_name, z_age, b, address=None)
+z_person = Person(name=None, age=None, height = b, address=None)
+print(z_person)
+N = 0
+if a == 'больше':
+    for i in people:
+        if i.height > b:
+            print(i)
+            N += 1
+if a == 'меньше':
+    for i in people:
+        if i.height < b:
+            print(i)
+            N += 1
+if a == 'равно':
+    for i in people:
+        if i.height == b:
+            print(i)
+            N += 1
+if N != 0:
+    print(f"Колличество совпадений '{N}'")
+else:
+    if N == 0:
+        print(f"Человек с параметрами {z_person} не найден")
+
 
 # for username, userinfo in people.items():
 #     print(f"username: {username}")
