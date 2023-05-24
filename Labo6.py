@@ -1,4 +1,3 @@
-# -*- coding: cp1251 -*-
 from pprint import pprint
 def compare(s1, s2):
     ngrams = [s1[i:i+3] for i in range(len(s1))]
