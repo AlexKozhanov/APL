@@ -1,4 +1,4 @@
-from pprint import pprint
+# 1
 def compare(s1, s2):
     ngrams = [s1[i:i+3] for i in range(len(s1))]
     count = 0
@@ -6,22 +6,22 @@ def compare(s1, s2):
         count += s2.count(ngram)
     return count/max(len(s1), len(s2)) > 0.6
 class Person:
-    "Класс создания переменной типа dic"
-    def __init__(self, name=None, age=None, height=None, address=None): # метод конструктор
+    "РљР»Р°СЃСЃ СЃРѕР·РґР°РЅРёСЏ РїРµСЂРµРјРµРЅРЅРѕР№ С‚РёРїР° dic"
+    def __init__(self, name=None, age=None, height=None, address=None): # РјРµС‚РѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
         self.name, self.age, self.height, self.address = name, age, height, address
         # self.key = (name, address)
-    def __repr__(self): # метод вывода / возвращает представление, которое максимально похожа на Питоновский код
+    def __repr__(self): # РјРµС‚РѕРґ РІС‹РІРѕРґР° / РІРѕР·РІСЂР°С‰Р°РµС‚ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ, РєРѕС‚РѕСЂРѕРµ РјР°РєСЃРёРјР°Р»СЊРЅРѕ РїРѕС…РѕР¶Р° РЅР° РџРёС‚РѕРЅРѕРІСЃРєРёР№ РєРѕРґ
         return "Person('%s',%s,%s,'%s')" % (self.name, self.age, self.height, self.address)
         # return f"Person('{self.name}',{self.age},{self.height},'{self.address}')"
-    def __eq__(self, obj): # метод сравнения персоны с чем-либо
+    def __eq__(self, obj): # РјРµС‚РѕРґ СЃСЂР°РІРЅРµРЅРёСЏ РїРµСЂСЃРѕРЅС‹ СЃ С‡РµРј-Р»РёР±Рѕ
         return (obj.name == None or self.name == None or compare(obj.name, self.name)) \
            and (obj.age == None or self.age == None or abs(obj.age - self.age) <= 2) \
            and (obj.height == None or self.height == None or abs(obj.height - self.height) <= 10) \
            and (obj.address == None or self.address == None or compare(obj.address, self.address))
 
-to_search1 = Person("Елена", 42, 167, "Мильчакова, 17, 100")
+to_search1 = Person("Р•Р»РµРЅР°", 42, 167, "РњРёР»СЊС‡Р°РєРѕРІР°, 17, 100")
 to_search2 = Person(age=40)
-to_search3 = Person(name="Еленаа")
+to_search3 = Person(name="Р•Р»РµРЅР°Р°")
 
 to_search_list = [
     to_search1,
@@ -30,10 +30,10 @@ to_search_list = [
 ]
 
 # name = Person("name","age","height","address")
-andrey = Person("Андрей", 36, 180, "Пушкина, 12, 115")
-alex = Person("Александр", 40, 170, "Ленского, 10, 5")
-olga = Person("Ольга", 30, 165, "Ленина, 1, 1")
-helena = Person("Елена", 42, 167, "Мильчакова, 17, 95")
+andrey = Person("РђРЅРґСЂРµР№", 36, 180, "РџСѓС€РєРёРЅР°, 12, 115")
+alex = Person("РђР»РµРєСЃР°РЅРґСЂ", 40, 170, "Р›РµРЅСЃРєРѕРіРѕ, 10, 5")
+olga = Person("РћР»СЊРіР°", 30, 165, "Р›РµРЅРёРЅР°, 1, 1")
+helena = Person("Р•Р»РµРЅР°", 42, 167, "РњРёР»СЊС‡Р°РєРѕРІР°, 17, 95")
 
 people = [
     andrey,
@@ -46,39 +46,39 @@ people = [
 # for p1, p2 in product(people, to_search_list):
 #     print(p1, p2, p1 == p2)
 
-print('Введите значения для поиска:')
-# z_name = input('Имя: ')
-# z_age = int(input('Возраст: '))
+print('Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёСЏ РґР»СЏ РїРѕРёСЃРєР°:')
+# z_name = input('РРјСЏ: ')
+# z_age = int(input('Р’РѕР·СЂР°СЃС‚: '))
 # z_age = int(z_age)
-# z_height = int(input('Рост: ')) # больше 120
-print('Рост, условный оператор (Возможные значения: больше, меньше, равно)\n'
-      '(Пример: больше 120)')
+# z_height = int(input('Р РѕСЃС‚: ')) # Р±РѕР»СЊС€Рµ 120
+print('Р РѕСЃС‚, СѓСЃР»РѕРІРЅС‹Р№ РѕРїРµСЂР°С‚РѕСЂ (Р’РѕР·РјРѕР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ: Р±РѕР»СЊС€Рµ, РјРµРЅСЊС€Рµ, СЂР°РІРЅРѕ)\n'
+      '(РџСЂРёРјРµСЂ: Р±РѕР»СЊС€Рµ 120)')
 a, b = input().split()
 b = int(b)
 # z_person = Person(z_name, z_age, b, address=None)
 z_person = Person(name=None, age=None, height = b, address=None)
 print(z_person)
 N = 0
-if a == 'больше':
+if a == 'Р±РѕР»СЊС€Рµ':
     for i in people:
         if i.height > b:
             print(i)
             N += 1
-if a == 'меньше':
+if a == 'РјРµРЅСЊС€Рµ':
     for i in people:
         if i.height < b:
             print(i)
             N += 1
-if a == 'равно':
+if a == 'СЂР°РІРЅРѕ':
     for i in people:
         if i.height == b:
             print(i)
             N += 1
 if N != 0:
-    print(f"Колличество совпадений '{N}'")
+    print(f"РљРѕР»Р»РёС‡РµСЃС‚РІРѕ СЃРѕРІРїР°РґРµРЅРёР№ '{N}'")
 else:
     if N == 0:
-        print(f"Человек с параметрами {z_person} не найден")
+        print(f"Р§РµР»РѕРІРµРє СЃ РїР°СЂР°РјРµС‚СЂР°РјРё {z_person} РЅРµ РЅР°Р№РґРµРЅ")
 
 
 # for username, userinfo in people.items():
@@ -86,26 +86,26 @@ else:
 #     print(f"userinfo: {userinfo}")
 
 # print(people.get("name"))
-# print(people.get("имя", "Что это?"))
-# print(people.setdefault(2)) # нетолько возвращает значение  ключа, но и создаёт новую пару
-# people_copy = people.copy() # копия словаря
+# print(people.get("РёРјСЏ", "Р§С‚Рѕ СЌС‚Рѕ?"))
+# print(people.setdefault(2)) # РЅРµС‚РѕР»СЊРєРѕ РІРѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ  РєР»СЋС‡Р°, РЅРѕ Рё СЃРѕР·РґР°С‘С‚ РЅРѕРІСѓСЋ РїР°СЂСѓ
+# people_copy = people.copy() # РєРѕРїРёСЏ СЃР»РѕРІР°СЂСЏ
 # print(people_copy)
-# people.update({helena.key: helena}) # новые пары в словарь
-# people.update({olga.key: helena}) # также если ключ есть, то перезапишет значение
-# print(people.pop(olga.key)) # удаляет ключ и возвращает значение
-# print(people.pop(helena.key, "No key!")) # если нет ключа, то возвращает переданное дефолтное значение
-# print(people.popitem()) # удаляет и возвращает случайную пару ключ-значение
-# print(people.keys()) возвращает список ключей словаря
-# print(people.values()) возвращает список значений
-# print(people.items()) возвращает кортежа с парами ключ-значение
-# people.clear() # очищает словарь
+# people.update({helena.key: helena}) # РЅРѕРІС‹Рµ РїР°СЂС‹ РІ СЃР»РѕРІР°СЂСЊ
+# people.update({olga.key: helena}) # С‚Р°РєР¶Рµ РµСЃР»Рё РєР»СЋС‡ РµСЃС‚СЊ, С‚Рѕ РїРµСЂРµР·Р°РїРёС€РµС‚ Р·РЅР°С‡РµРЅРёРµ
+# print(people.pop(olga.key)) # СѓРґР°Р»СЏРµС‚ РєР»СЋС‡ Рё РІРѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ
+# print(people.pop(helena.key, "No key!")) # РµСЃР»Рё РЅРµС‚ РєР»СЋС‡Р°, С‚Рѕ РІРѕР·РІСЂР°С‰Р°РµС‚ РїРµСЂРµРґР°РЅРЅРѕРµ РґРµС„РѕР»С‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
+# print(people.popitem()) # СѓРґР°Р»СЏРµС‚ Рё РІРѕР·РІСЂР°С‰Р°РµС‚ СЃР»СѓС‡Р°Р№РЅСѓСЋ РїР°СЂСѓ РєР»СЋС‡-Р·РЅР°С‡РµРЅРёРµ
+# print(people.keys()) РІРѕР·РІСЂР°С‰Р°РµС‚ СЃРїРёСЃРѕРє РєР»СЋС‡РµР№ СЃР»РѕРІР°СЂСЏ
+# print(people.values()) РІРѕР·РІСЂР°С‰Р°РµС‚ СЃРїРёСЃРѕРє Р·РЅР°С‡РµРЅРёР№
+# print(people.items()) РІРѕР·РІСЂР°С‰Р°РµС‚ РєРѕСЂС‚РµР¶Р° СЃ РїР°СЂР°РјРё РєР»СЋС‡-Р·РЅР°С‡РµРЅРёРµ
+# people.clear() # РѕС‡РёС‰Р°РµС‚ СЃР»РѕРІР°СЂСЊ
 # pprint(people)
 
 # if __name__ == "__main__":
 
     # getattr(odj, name,[, default]) -
-    # hasattr(odj, name) - проверяет на наличие атрибута name в obj
-    # setattr(odj, name, value) - зкадает значение атрибута (если атрибут не существует, то он создается)
-    # delattr(obj, name) - удаляет атрибут с именем name
-    # class.__doc__ - содержит строку с описанием класса
-    # *.__dict__  - содержит набор атрибутов экзэмпляра класса
+    # hasattr(odj, name) - РїСЂРѕРІРµСЂСЏРµС‚ РЅР° РЅР°Р»РёС‡РёРµ Р°С‚СЂРёР±СѓС‚Р° name РІ obj
+    # setattr(odj, name, value) - Р·РєР°РґР°РµС‚ Р·РЅР°С‡РµРЅРёРµ Р°С‚СЂРёР±СѓС‚Р° (РµСЃР»Рё Р°С‚СЂРёР±СѓС‚ РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚, С‚Рѕ РѕРЅ СЃРѕР·РґР°РµС‚СЃСЏ)
+    # delattr(obj, name) - СѓРґР°Р»СЏРµС‚ Р°С‚СЂРёР±СѓС‚ СЃ РёРјРµРЅРµРј name
+    # class.__doc__ - СЃРѕРґРµСЂР¶РёС‚ СЃС‚СЂРѕРєСѓ СЃ РѕРїРёСЃР°РЅРёРµРј РєР»Р°СЃСЃР°
+    # *.__dict__  - СЃРѕРґРµСЂР¶РёС‚ РЅР°Р±РѕСЂ Р°С‚СЂРёР±СѓС‚РѕРІ СЌРєР·СЌРјРїР»СЏСЂР° РєР»Р°СЃСЃР°
