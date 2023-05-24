@@ -1,6 +1,5 @@
-# -*- coding: cp1251 -*-
 def find_persons_in_dict(persons):
-    people_dict = {} # dictionary ñëîâàðü
+    people_dict = {} # dictionary ÑÐ»Ð¾Ð²Ð°Ñ€ÑŒ
     for username, userinfo in persons.items():
         age = userinfo["age"]
         height = userinfo["height"]
@@ -15,7 +14,7 @@ def find_persons_in_dict(persons):
         }})
     # print(persons)
     # print(people_dict)
-    sorted_dict = { # ñîðòèðîâêà ñëîâàðÿ ïî âîçðàñòàíèþ âîçðàñòà
+    sorted_dict = { # ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° ÑÐ»Ð¾Ð²Ð°Ñ€Ñ Ð¿Ð¾ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚Ð°Ð½Ð¸ÑŽ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚Ð°
         k: v for k, v in sorted(people_dict.items(), key=lambda x:x[1]['age'])
     }
     last = list(sorted_dict.keys())[-1]
@@ -25,14 +24,14 @@ def find_persons_in_dict(persons):
     return last, people_dict[last]
 
 def find_teacher_in_list(persons):
-    persons_list = [] # list ñïèñîê
+    persons_list = [] # list ÑÐ¿Ð¸ÑÐ¾Ðº
     for username, userinfo in persons.items():
         age = userinfo["age"]
         height = userinfo["height"]
         sex = userinfo["sex"]
         position = userinfo["position"]
 
-        persons_list += [( # êîíâåðòèðóåì ñëîâàðü â ñïèñîê ñ êîðòåæàìè
+        persons_list += [( # ÐºÐ¾Ð½Ð²ÐµÑ€Ñ‚Ð¸Ñ€ÑƒÐµÐ¼ ÑÐ»Ð¾Ð²Ð°Ñ€ÑŒ Ð² ÑÐ¿Ð¸ÑÐ¾Ðº Ñ ÐºÐ¾Ñ€Ñ‚ÐµÐ¶Ð°Ð¼Ð¸
             username,
             age,
             height,
@@ -40,7 +39,7 @@ def find_teacher_in_list(persons):
             position,
         )]
     # print(persons_list)
-    rez = sorted(persons_list, key=lambda x: x[1])[-1] # ñîðòèðîâêà ñïèñêà ïî âîçðàñòàíèþ âîçðàñòà
+    rez = sorted(persons_list, key=lambda x: x[1])[-1] # ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° ÑÐ¿Ð¸ÑÐºÐ° Ð¿Ð¾ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚Ð°Ð½Ð¸ÑŽ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚Ð°
     # persons_list = sorted(persons_list, key=lambda x: x[1])
     # print(persons_list)
     return rez
@@ -76,12 +75,12 @@ if __name__ == '__main__':
     main()
 
     # for username, userinfo in persons.items():
-    #     print(f"Èìÿ ïîëüçîâàòåëÿ: {username}")
+    #     print(f"Ð˜Ð¼Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ: {username}")
     #     age = userinfo["age"]
     #     sex = userinfo["sex"]
     #
-    #     print(f"Âîçðàñò ïîëüçîâàòåëÿ {username} : {age} ëåò.")
-    #     print(f"Ïîë ïîëüçîâàòåëÿ {username} : {sex}.\n")
+    #     print(f"Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ {username} : {age} Ð»ÐµÑ‚.")
+    #     print(f"ÐŸÐ¾Ð» Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ {username} : {sex}.\n")
 
     # for k, v in person.items():
     #     print(f"{k} >>> {v}")
