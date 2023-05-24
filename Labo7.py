@@ -4,7 +4,7 @@ def compare(s1, s2):
     count = 0
     for ngram in ngrams:
         count += s2.count(ngram)
-    return count/max(len(s1), len(s2)) > 0.6
+    return count/max(len(s1), len(s2)) > 0.9
 class Person:
     "Класс создания переменной типа dic"
     def __init__(self, name=None, age=None, height=None, address=None): # метод конструктор
