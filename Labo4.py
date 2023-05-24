@@ -1,4 +1,3 @@
-# -*- coding: cp1251 -*-
 import numpy as np
 def task1():
     # 1) Сумма ряда 0-100
